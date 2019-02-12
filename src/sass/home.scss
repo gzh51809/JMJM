@@ -36,9 +36,39 @@
             }
         }
     }
+ 
     .main{
+        margin-bottom:50px; 
         width:100%;
         overflow-y:auto;
+        .home-nav{
+            display: flex;
+            flex-wrap:wrap;
+            height: 105px;
+            background: #333;
+            li{
+                display: flex;
+                justify-content: space-around;
+                flex-direction:column;
+                align-items:center;
+                width:20%;
+                height: 105px;
+               
+                // height:50%;
+                img{
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 7px;
+                }
+                span{
+                    // text-align:center;
+                    font-size:10px;
+                    height: 22px;
+                    color:white;
+                    width: 60px;
+                }
+            }
+        }
         .home-find{
             width:100%;
             .search{
@@ -57,34 +87,7 @@
                     line-height: 22px;
                 }
             }
-            .home-nav{
-                display: flex;
-                flex-wrap:wrap;
-                height: 105px;
-                background: #333;
-                li{
-                    display: flex;
-                    justify-content: space-around;
-                    flex-direction:column;
-                    align-items:center;
-                    width:20%;
-                    height: 105px;
-                   
-                    // height:50%;
-                    img{
-                        height: 60px;
-                        width: 60px;
-                        border-radius: 7px;
-                    }
-                    span{
-                        // text-align:center;
-                        font-size:10px;
-                        height: 22px;
-                        color:white;
-                        width: 60px;
-                    }
-                }
-            }
+          
             .home-article{
                 box-sizing:border-box;
                 height:38px;
@@ -127,9 +130,91 @@
             width:100%;
         }
         .nuandon{
-                width: 100%;
-                img{
+            width: 100%;
+            margin-top: 15px;
+            background-color:#333;
+            border-bottom: 1px solid #d9d9d9;
+                .top-img{
+                    border-bottom: 1px solid #d9d9d9;
+                    padding: 0;
+                    position: relative;
                     width: 100%;
+                        img{
+                            height: 190px;
+                        }
+                }
+                .but-name{
+                    display: flex;
+                    padding: 0 12px;
+                    position: relative;
+                        span{
+                            overflow: hidden;
+                            color: #424242;
+                            width: 100%;
+                            margin: 5px 0;
+                            word-break: keep-all;
+                            white-space: nowrap;
+                        }
+                        div{
+                            position: absolute;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            right: 0;
+                            padding-right: 10px;
+                            font-size: 18px;
+                            color: #e93131;
+                            font-family: "Arial";
+                            float: left;
+                            display: inline;
+                            font-weight: bold; 
+                        }
+                }
+        }
+        .zhangshi{
+            width: 100%;
+            margin-top: 15px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #d9d9d9;
+                .top-img{
+                    border-bottom: 1px solid #d9d9d9;
+                    padding: 0;
+                    position: relative;
+                    width: 100%;
+                        img{
+                            height: 170px;
+                            width: auto;
+                            margin-left: 100px;
+                        }
+                }
+                .but-name{
+                    display: flex;
+                    flex-direction: column;
+                    height: 60px;
+                    padding: 0 12px;
+                    //position: relative;
+                        span{
+                            display: block;
+                            height: 20px;
+                            overflow: hidden;
+                            color: #424242;
+                            width: 100%;
+                            margin: 5px 0;
+                            word-break: keep-all;
+                            white-space: nowrap;
+                        }
+                        div{
+                            //position: absolute;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            right: 0;
+                            padding-right: 10px;
+                            font-size: 18px;
+                            color: #e93131;
+                            font-family: "Arial";
+                            float: left;
+                            display: inline;
+                            font-weight: bold; 
+                        }
                 }
         }
     }

@@ -9,8 +9,8 @@ class Bottomtab extends Component {
             tabs:[
                 {
                     text:'推荐',
-                    path:'/recommend',
-                    name:'recommend',
+                    path:'/home',
+                    name:'home',
                     // icon:'icon-zhaobudaojieguo'
                 },
                 {

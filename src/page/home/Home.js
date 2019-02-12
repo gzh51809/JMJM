@@ -1,11 +1,15 @@
 import React,{Component} from 'react';
-import {Route,Switch,Redirect} from 'react-router-dom';
+// import {Route,Switch,Redirect} from 'react-router-dom';
 import '@/sass/home.scss';
-import axios from 'axios';
+// import axios from 'axios';
 import BottomBar from '@com/BottomBar';
 import HomeHeader from '@com/HomeHeader';
-import HomeFind from './HomeFind';
-import HomeFocus from './HomeFocus';
+import HomeNav from './HomeNav';
+// import HomeBanner from './HomeBanner';
+import { Carousel } from 'antd-mobile';
+// import HomeFind from './HomeFind';
+// import HomeFocus from './HomeFocus';
+//import '@/sass/home.scss'
 
 
 
@@ -17,6 +21,8 @@ class Home extends Component{
              data1:[],
              //商品展示
              data2:[],
+             data3:[],
+             imgHeight:280
  
         }
     }
@@ -28,13 +34,17 @@ class Home extends Component{
        fetch(url,option).then((res)=>{
            return res.json()
        }).then((res)=>{
+        
             //轮播图
             var ban = res[3].setList[0].contentList;
             var ban2 = res[2].setList[0].contentList;
-            console.log(ban);
+            var banner = res[0].setList[0].contentList
+            ban2=ban2.slice(0,5);
+            // console.log(banner);
             this.setState({
                 data1 : ban,
-                data2 : ban2
+                data2 : ban2,
+                data3 : banner
             });
        })
     }
@@ -46,6 +56,33 @@ class Home extends Component{
                     <BottomBar/>
                 </footer>
                 <div className="main">
+                <Carousel
+                selectedIndex={0}
+                autoplay={this.state.data3}
+                infinite
+                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                afterChange={index => console.log('slide to', index)}
+                >
+                    {this.state.data3.map(item => (
+                        <a
+                        key={item.item_image}
+                        href="javascript:;"
+                        style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                        >
+                        <img
+                            src={item.item_image}
+                            alt=""
+                            style={{ width: '100%', verticalAlign: 'top' }}
+                            onLoad={() => {
+                                // fire window resize event to change height
+                                window.dispatchEvent(new Event('resize'));
+                                this.setState({ imgHeight: 'auto' });
+                            }}
+                        />
+                        </a>
+                    ))}
+                </Carousel>
+                <HomeNav/>
                      {
                             this.state.data1.map(item=>{
                                 return <div className="nuandon" key={item.alt_desc}>
@@ -63,7 +100,7 @@ class Home extends Component{
                         }
                          {
                             this.state.data2.map(item=>{
-                                return <div className="zhangshi">
+                                return <div className="zhangshi" key={item.brand_name}>
                                     <div className="top-img">
                                         <img src={item.item_image} alt={item.item_image} />
                                     

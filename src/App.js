@@ -7,7 +7,7 @@ import Factory from '@/page/factory/Factory';
 import Finder from '@/page/finder/Finder';
 import Cart from '@/page/cart/Cart';
 import Mine from '@/page/mine/Mine';
-import Guang from '@/page/guangwan/guang';
+// import Guang from '@/page/guangwan/guang';
 import Bottomtab from '@/components/Bottomtab'
 import './sass/home.scss'
 
