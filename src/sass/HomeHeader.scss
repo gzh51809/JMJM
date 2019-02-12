@@ -1,0 +1,35 @@
+.home-header{
+    height:42px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    background-color: #F12E24;
+    
+    &>div{
+        flex:1;
+        padding:10px 13px;
+        &:nth-child(2){
+            text-align: center;
+        }
+        &:nth-child(3){
+            text-align: right;
+        }
+        &>a{
+            display:inline-block;
+            font-size:12px;
+            line-height: 20px;
+            color: #fff;
+            &:first-child{
+                margin-right:10px;
+            }
+            &>i{
+                font-size:20px;
+                color: #fff;
+            }
+        }
+        .active{
+            color:#000;
+            border-bottom:2px solid #ff2d51;
+        }
+    }
+}
